@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
+<classPathEntry    location="G:\eclipse-jee-workplace\mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
     <context id="oaSystem" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>  
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin> 
@@ -25,23 +26,23 @@
         </javaTypeResolver>
         <!-- 生成模型的包名和位置 -->
         <javaModelGenerator targetPackage="com.zy1401_402.oaSystem.entity"
-            targetProject="target">
+            targetProject="G:\eclipse-jee-workplace\OfficeAutomationSystem\src\main\java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!-- 生成映射文件的包名和位置 -->
         <sqlMapGenerator targetPackage="com.zy1401_402.oaSystem.mapping"
-            targetProject="target">
+            targetProject="G:\eclipse-jee-workplace\OfficeAutomationSystem\src\main\java">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置 -->
         <javaClientGenerator type="XMLMAPPER"
-            targetPackage="com.zy1401_402.oaSystem.dao" implementationPackage="com.zy1401_402.oaSystem.dao.impl"  targetProject="target">
+            targetPackage="com.zy1401_402.oaSystem.dao" implementationPackage="com.zy1401_402.oaSystem.dao.impl"  targetProject="G:\eclipse-jee-workplace\OfficeAutomationSystem\src\main\java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
         
         <!-- 要生成哪些表 -->
-        <table tableName="user" domainObjectName="user"
+        <table tableName="person" domainObjectName="person"
             enableCountByExample="false" enableUpdateByExample="false"
             enableDeleteByExample="false" enableSelectByExample="false"
             selectByExampleQueryId="false"></table>

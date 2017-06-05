@@ -47,7 +47,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:com/zy1401_402/oaSystem/entity/*.xml"></property>
+        <property name="mapperLocations" value="classpath:com/zy1401_402/oaSystem/mapping/*.xml"></property>
     </bean>
     
      <!-- 使用JDBC事物 -->  

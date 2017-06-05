@@ -3,11 +3,22 @@
 
     <display-name>Archetype Created Web Application</display-name>  
       
+    <servlet>
+        <description></description>
+        <display-name>oaSystemServlet</display-name>
+        <servlet-name>oaSystemServlet</servlet-name>
+        <servlet-class>com.zy1401_402.oaSystem.servlet.oaSystemServlet</servlet-class>
+    </servlet>
+  
+    <servlet-mapping>
+        <servlet-name>oaSystemServlet</servlet-name>
+        <url-pattern>/oaSystemServlet</url-pattern>
+    </servlet-mapping>
       
     <!-- 加载spring bean -->  
     <context-param>  
          <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath:applicationContext.xml</param-value>  
+        <param-value>classpath:spring-*.xml</param-value>  
     </context-param>  
     <listener>  
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
@@ -41,7 +52,7 @@
     </servlet>  
     <servlet-mapping>  
         <servlet-name>SpringMVC</servlet-name>  
-        <url-pattern>*.action</url-pattern>  
+        <url-pattern>/</url-pattern>  
     </servlet-mapping>  
       
 
