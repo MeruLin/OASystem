@@ -29,6 +29,7 @@ public class LoginController {
 		Subject subject = SecurityUtils.getSubject();  
 	    try {  
 	        subject.login(token);  
+	        subject.getSession().setAttribute("person_id", id);
 	        if (subject.isAuthenticated()) {
 	            return "success";  
 	        } else {  

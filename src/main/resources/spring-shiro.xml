@@ -27,7 +27,7 @@
 		
 		<property name="authenticationQuery" value="SELECT person_password FROM person WHERE person_id = ?"></property>
 		<property name="userRolesQuery" value="SELECT person_role FROM person WHERE person_id = ? "></property>
-		<property name="permissionsQuery" value="select role_permission from permission where person_role in (select person_role from person where person_id = ?)"></property>
+		<property name="permissionsQuery" value="select role_permission from permission where person_role = ?"></property>
 	</bean>
 
 	<!-- Shiro安全管理器 -->
