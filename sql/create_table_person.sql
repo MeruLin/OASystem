@@ -1,8 +1,10 @@
 create table person(
-id varchar(20) NOT NULL,
-password varchar(30) NOT NULL,
-name varchar(20) NOT NULL,
-role varchar(10) NOT NULL,
-department varchar(20) NOT NULL,
-primary key(id)
+person_id varchar(20) NOT NULL,
+person_password varchar(30) NOT NULL,
+person_name varchar(20) NOT NULL,
+person_role varchar(10) NOT NULL,
+person_department varchar(20) NOT NULL,
+person_phone varchar(20),
+person_email varchar(50),
+primary key(person_id)
 )
