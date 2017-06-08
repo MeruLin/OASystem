@@ -12,7 +12,7 @@ public class SetCourseController {
 	@RequestMapping("/setCourse")
 	public String SetCourse() throws Exception{
 		Subject subject = SecurityUtils.getSubject();
-		if(subject.isPermitted("set_course")){
+		if(subject.isPermitted("set_schedule")){
 			System.out.println(subject.getSession().getAttribute("person_id"));
 			return "set_schedule";
 		}else{
