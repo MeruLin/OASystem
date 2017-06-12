@@ -22,6 +22,11 @@ public class AskForLeaveController {
 	private leave_applyMapper leave_applyMapper;
 	private personMapper personMapper;
 	
+	@RequestMapping("/applyforleave")
+	public String applyForLeave(){
+		return "apply_leave";
+	}
+	
 	@RequestMapping("/apply_leave")
 	public String applyLeave(leave_apply apply){
 		Subject subject = SecurityUtils.getSubject();
@@ -31,6 +36,16 @@ public class AskForLeaveController {
 		apply.setPersonName(per.getPersonName());
 		leave_applyMapper.insert(apply);
 		return "success";
+	}
+	
+	@RequestMapping("/permit_leave")
+	public String PermitLeave(){
+		Subject subject = SecurityUtils.getSubject();
+		if(subject.isPermitted("permit_leave")){
+			return "show_leave";
+		}else{
+			return "not_allow";
+		}
 	}
 
 }

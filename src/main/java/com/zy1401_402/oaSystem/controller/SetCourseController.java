@@ -25,10 +25,10 @@ public class SetCourseController {
 	private coursesMapper coursesMapper;
 	private scheduleMapper scheduleMapper;
     
-	@RequestMapping("/setCourse")
-	public String SetCourse(schedule sch) throws Exception{
+	@RequestMapping("/add_course")
+	public String AddCourse(schedule sch) throws Exception{
 		Subject subject = SecurityUtils.getSubject();
-		if(subject.isPermitted("set_course")){
+		if(subject.isPermitted("add_course")){
 			//向输入的课程中添加添课者信息
 			String person_id = (String)subject.getSession().getAttribute("person_id");
 			person per = personMapper.selectByPrimaryKey(person_id);
@@ -57,4 +57,15 @@ public class SetCourseController {
 		return null;
 	}
 	
+	@RequestMapping("/set_course")
+	public String SetCourse(schedule sch){
+		Subject subject = SecurityUtils.getSubject();
+		if(subject.isPermitted("set_course")){
+			//scheduleMapper.updateByPrimaryKeySelective(sch);
+			return "success";
+		}else{
+			//没有设置课程权限
+			return "not_allow";
+		}
+	}
 }
